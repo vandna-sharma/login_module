@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets\font-awesome-4.7.0\font-awesome-4.7.0\css\font-awesome.min.css">
+</head>
+<body>
+<div class="container-fluid main">
+    <div class="row w-75 rounded-2 bg-white shadow">
+        <div class="col-md-6 p-0">
+<img src="assets/images/student.jpg" class="img-fluid">
+        </div>
+        
+        <div class="col-md-6 px-4 ">
+            
+            <h2 class="pt-4 text-center text-primary fw-bold">Student Login</h2>
+            
+            
+            <form id="form" action="#" method=""> 
+                <div class="mb-3 ">
+                    <label class="my-2 w-100">Email address:
+                    <input type="text" id="email" class="form-control  py-3 bg-light"  placeholder="name@example.com">
+                    <span class="email_error">
+                        
+                    </span>
+                    
+                   </label> 
+                  </div>
+                  <div class="mb-3">
+                    <label class="my-2 w-100">Password
+                    <input type="password" id="password" class="form-control  py-3 bg-light" placeholder="12365">
+                    <span class="password_error ">
+                    
+                    </span>
+                    </label>
+                    </div>
+                  
+                    <input type="submit" class=" login btn btn-success px-5 py-2 my-4  d-block w-100 " value="Login">
+            </form>
+
+            <div class="footer d-flex justify-content-between my-2">
+                <div class="form-check">
+                    <label>
+                        Remember me
+                      
+                    <input class="form-check-input" type="checkbox" value="remember" >
+                  </label>
+                  </div>
+
+                  <a href="forgot_password.html" class="text-decoration-none ">Forgot Password?</a>
+
+            </div>
+            <button class="btn btn-primary px-4 py-2 d-block m-auto register"><a href="register.html" class="text-white text-decoration-none">Register Now</a></button>
+
+        </div>
+       
+
+    </div>
+
+</div>
+
+
+ <script src="assets/js/bootstrap.js"></script> 
+ <script src="assets/js/jquery.js"></script>
+ <script>
+
+
+$("#form").submit(function(e){
+    e.preventDefault()
+    let email_value=$("#email").val()
+    var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+    let password_value=$("#password").val()
+    if(email_value=="" || email_value.indexOf('@')==-1 || email_value.indexOf('.')==-1)
+    {
+        $(".email_error").html("enter a valid email**")
+
+    }
+    else{
+        $(".email_error").html("email verified")
+        $(".email_error").css("color","green")
+      
+    if(password_value=="" || password_value.length<5){
+        
+        $(".password_error").html("enter valid password")
+        
+    }
+    else{
+        $(".password_error").html("password verified").css("color","green")
+    }
+      
+        
+    }
+
+
+})
+   
+ </script>  
+</body>
+</html>
